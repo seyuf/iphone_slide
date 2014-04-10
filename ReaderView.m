@@ -25,12 +25,43 @@
 {
     if (index >= 0 && index < [self.delegate numberOfPages])
     {
-        
-        [self.subviews.lastObject removeFromSuperview];
-  
-        UIView * view = [self.delegate pageAtIndex:index];
-        [self addSubview:view];
-        self.currentPage  = index;
+        if(animated){
+            [self.subviews.lastObject removeFromSuperview];
+            
+            UIView * view = [self.delegate pageAtIndex:index];
+            [self addSubview:view];
+           
+        }else{
+            UIView * oldView = self.subviews.lastObject;
+            UIView * newView = [self.delegate pageAtIndex:index];
+            [self addSubview:newView];
+            CGPoint center = newView.center;
+            CGPoint left = CGPointMake(center.x - self.bounds.size.width, center.y );
+            CGPoint right = CGPointMake(center.x + self.bounds.size.width, center.y );
+            if( index < self.currentPage){
+                newView.center = left;
+                [UIView animateWithDuration:1
+                                 animations:^{
+                                     newView.center = center;
+                                     oldView.center = right;
+                                 }
+                                 completion:^(BOOL finished) {
+                                     [oldView removeFromSuperview];
+                                 }];
+            }else{
+                newView.center = right;
+                [UIView animateWithDuration:1
+                                 animations:^{
+                                     newView.center = center;
+                                     oldView.center = left;
+                                 }
+                                 completion:^(BOOL finished) {
+                                     [oldView removeFromSuperview];
+                                 }];
+            }
+            
+        }
+         self.currentPage  = index;
     }
 }
 
