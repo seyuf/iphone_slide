@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FlickrPicture.h"
 @interface PictureViewController : UIViewController
+@property (assign, nonatomic) FlickRLocation location;
 
 @end

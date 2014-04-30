@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC09399E19115001006CC7B8 /* FlickrPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EC09399D19115001006CC7B8 /* FlickrPicture.m */; };
 		EC5B132418F6861500C300C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B132318F6861500C300C4 /* Foundation.framework */; };
 		EC5B132618F6861500C300C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B132518F6861500C300C4 /* CoreGraphics.framework */; };
 		EC5B132818F6861500C300C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B132718F6861500C300C4 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC09399C19115001006CC7B8 /* FlickrPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPicture.h; sourceTree = "<group>"; };
+		EC09399D19115001006CC7B8 /* FlickrPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPicture.m; sourceTree = "<group>"; };
 		EC5B132018F6861500C300C4 /* Xproj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xproj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5B132318F6861500C300C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC5B132518F6861500C300C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,8 @@
 				EC5B135A18F68EA800C300C4 /* PictureViewController.h */,
 				EC5B135B18F68EA800C300C4 /* PictureViewController.m */,
 				EC5B135D18F68EDE00C300C4 /* ReaderView.h */,
+				EC09399C19115001006CC7B8 /* FlickrPicture.h */,
+				EC09399D19115001006CC7B8 /* FlickrPicture.m */,
 				EC5B135E18F68EDE00C300C4 /* ReaderView.m */,
 				EC5B132B18F6861500C300C4 /* Xproj */,
 				EC5B134818F6861500C300C4 /* XprojTests */,
@@ -285,6 +290,7 @@
 				EC5B133918F6861500C300C4 /* Xproj.xcdatamodeld in Sources */,
 				EC5B135C18F68EA800C300C4 /* PictureViewController.m in Sources */,
 				EC5B133618F6861500C300C4 /* AppDelegate.m in Sources */,
+				EC09399E19115001006CC7B8 /* FlickrPicture.m in Sources */,
 				EC5B135F18F68EDE00C300C4 /* ReaderView.m in Sources */,
 				EC5B133218F6861500C300C4 /* main.m in Sources */,
 			);
@@ -487,6 +493,7 @@
 				EC5B135418F6861500C300C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC5B135518F6861500C300C4 /* Build configuration list for PBXNativeTarget "XprojTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +502,7 @@
 				EC5B135718F6861500C300C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

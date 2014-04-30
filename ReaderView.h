@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol ReaderViewDelegate <NSObject>
--(int) numberOfPages;
+-(long) numberOfPages;
 -(UIView *) pageAtIndex:(int)index;
 @end
 

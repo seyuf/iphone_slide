@@ -11,6 +11,7 @@
 
 @interface PictureViewController () <ReaderViewDelegate>
 @property (weak, nonatomic) IBOutlet ReaderView *readerView;
+@property (strong, nonatomic) NSArray * pictures;
 
 @end
 
@@ -28,22 +29,33 @@
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.readerView displayPageAtIndex:0 animated:NO];
+    
 }
 
--(int) numberOfPages
+-(long) numberOfPages
 {
-    return 5;
+    return self.pictures.count;
 }
 
 -(UIView *) pageAtIndex:(int)index
 {
-    NSString *imageName = [NSString stringWithFormat:@"00%i.jpeg",index];
-    UIImage * image= [UIImage imageNamed:imageName];
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
+    //NSString *imageName = [NSString stringWithFormat:@"00%i.jpeg",index];
+    //UIImage * image= [UIImage imageNamed:imageName];
+    
+    UIImageView * imageView = [[UIImageView alloc] init];
     imageView.frame = self.readerView.bounds;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    return imageView;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    self.title = @"chargement...";
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        FlickrPicture * picture = self.pictures[index];
+        NSData * imageData =  [NSData dataWithContentsOfURL:picture.url];
+        imageView.image=  [UIImage imageWithData:imageData];
+         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        self.title = picture.title;
+    });
+    
+       return imageView;
 
 }
 
@@ -51,8 +63,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.readerView.delegate = self;
-}
+    //self.readerView.delegate = self;
+    _location.latitude = 48.89364 ;
+    _location.longitude = 2.33739;
+    _location.radius = 0;
+    UIActivityIndicatorView * indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.backgroundColor = [UIColor blackColor];
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator startAnimating];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        self.pictures = [FlickrPicture picturesAroundLocation:_location];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.readerView.delegate = self;
+            [self.readerView displayPageAtIndex:0 animated:YES];
+            [indicator stopAnimating];
+        });
+        
+
+    });
+    }
 
 - (void)didReceiveMemoryWarning
 {

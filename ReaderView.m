@@ -25,7 +25,7 @@
 {
     if (index >= 0 && index < [self.delegate numberOfPages])
     {
-        if(animated){
+        if(!animated){
             [self.subviews.lastObject removeFromSuperview];
             
             UIView * view = [self.delegate pageAtIndex:index];
