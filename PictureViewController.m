@@ -50,9 +50,11 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         FlickrPicture * picture = self.pictures[index];
         NSData * imageData =  [NSData dataWithContentsOfURL:picture.url];
-        imageView.image=  [UIImage imageWithData:imageData];
-         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        self.title = picture.title;
+        dispatch_sync( dispatch_get_main_queue(), ^{
+            imageView.image=  [UIImage imageWithData:imageData];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            self.title = picture.title;
+        });
     });
     
        return imageView;
