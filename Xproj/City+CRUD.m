@@ -17,7 +17,7 @@
 }
 
 +(instancetype)newCity{
-    City * city = [NSEntityDescription insertNewObjectForEntityForName:@"city" inManagedObjectContext:[self context]];
+    City * city = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[self context]];
     [[self appDelegate] saveContext];
     return city;
 }

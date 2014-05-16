@@ -22,6 +22,7 @@
     
     NSURL * url = [NSURL URLWithString:urlString ];
     NSData * data = [NSData dataWithContentsOfURL:url];
+    // TODO use AF framework for networking instead
     
     NSDictionary * jsonData = [NSJSONSerialization JSONObjectWithData:data options:0 error:Nil];
     

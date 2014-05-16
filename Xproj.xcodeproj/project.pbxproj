@@ -33,6 +33,8 @@
 		EC5B136918F696DE00C300C4 /* 000.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EC5B136418F696DE00C300C4 /* 000.jpeg */; };
 		EC9E28B519260891006E3DB7 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9E28B419260891006E3DB7 /* City.m */; };
 		EC9E28B819260990006E3DB7 /* City+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9E28B719260990006E3DB7 /* City+CRUD.m */; };
+		EC9E28BB19261831006E3DB7 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9E28BA19261831006E3DB7 /* CityViewController.m */; };
+		EC9E28BE192624AB006E3DB7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9E28BD192624AB006E3DB7 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		EC9E28B419260891006E3DB7 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		EC9E28B619260990006E3DB7 /* City+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CRUD.h"; sourceTree = "<group>"; };
 		EC9E28B719260990006E3DB7 /* City+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CRUD.m"; sourceTree = "<group>"; };
+		EC9E28B919261831006E3DB7 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		EC9E28BA19261831006E3DB7 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		EC9E28BC192624AB006E3DB7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		EC9E28BD192624AB006E3DB7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				EC5B135818F6876C00C300C4 /* Storyboard.storyboard */,
+				EC9E28BC192624AB006E3DB7 /* MapViewController.h */,
+				EC9E28BD192624AB006E3DB7 /* MapViewController.m */,
+				EC9E28B919261831006E3DB7 /* CityViewController.h */,
+				EC9E28BA19261831006E3DB7 /* CityViewController.m */,
 				EC5B135A18F68EA800C300C4 /* PictureViewController.h */,
 				EC5B135B18F68EA800C300C4 /* PictureViewController.m */,
 				EC5B135D18F68EDE00C300C4 /* ReaderView.h */,
@@ -303,6 +313,8 @@
 				EC5B133618F6861500C300C4 /* AppDelegate.m in Sources */,
 				EC09399E19115001006CC7B8 /* FlickrPicture.m in Sources */,
 				EC5B135F18F68EDE00C300C4 /* ReaderView.m in Sources */,
+				EC9E28BB19261831006E3DB7 /* CityViewController.m in Sources */,
+				EC9E28BE192624AB006E3DB7 /* MapViewController.m in Sources */,
 				EC9E28B519260891006E3DB7 /* City.m in Sources */,
 				EC5B133218F6861500C300C4 /* main.m in Sources */,
 			);

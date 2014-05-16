@@ -42,6 +42,7 @@
     //NSString *imageName = [NSString stringWithFormat:@"00%i.jpeg",index];
     //UIImage * image= [UIImage imageNamed:imageName];
     
+    
     UIImageView * imageView = [[UIImageView alloc] init];
     imageView.frame = self.readerView.bounds;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
