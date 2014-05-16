@@ -31,6 +31,8 @@
 		EC5B136718F696DE00C300C4 /* 002.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EC5B136218F696DE00C300C4 /* 002.jpeg */; };
 		EC5B136818F696DE00C300C4 /* 001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EC5B136318F696DE00C300C4 /* 001.jpeg */; };
 		EC5B136918F696DE00C300C4 /* 000.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EC5B136418F696DE00C300C4 /* 000.jpeg */; };
+		EC9E28B519260891006E3DB7 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9E28B419260891006E3DB7 /* City.m */; };
+		EC9E28B819260990006E3DB7 /* City+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9E28B719260990006E3DB7 /* City+CRUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		EC5B136218F696DE00C300C4 /* 002.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 002.jpeg; sourceTree = "<group>"; };
 		EC5B136318F696DE00C300C4 /* 001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpeg; sourceTree = "<group>"; };
 		EC5B136418F696DE00C300C4 /* 000.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000.jpeg; sourceTree = "<group>"; };
+		EC9E28B319260891006E3DB7 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		EC9E28B419260891006E3DB7 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		EC9E28B619260990006E3DB7 /* City+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CRUD.h"; sourceTree = "<group>"; };
+		EC9E28B719260990006E3DB7 /* City+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CRUD.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,10 @@
 				EC5B136318F696DE00C300C4 /* 001.jpeg */,
 				EC5B136418F696DE00C300C4 /* 000.jpeg */,
 				EC5B133718F6861500C300C4 /* Xproj.xcdatamodeld */,
+				EC9E28B319260891006E3DB7 /* City.h */,
+				EC9E28B419260891006E3DB7 /* City.m */,
+				EC9E28B619260990006E3DB7 /* City+CRUD.h */,
+				EC9E28B719260990006E3DB7 /* City+CRUD.m */,
 				EC5B132C18F6861500C300C4 /* Supporting Files */,
 			);
 			path = Xproj;
@@ -287,11 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9E28B819260990006E3DB7 /* City+CRUD.m in Sources */,
 				EC5B133918F6861500C300C4 /* Xproj.xcdatamodeld in Sources */,
 				EC5B135C18F68EA800C300C4 /* PictureViewController.m in Sources */,
 				EC5B133618F6861500C300C4 /* AppDelegate.m in Sources */,
 				EC09399E19115001006CC7B8 /* FlickrPicture.m in Sources */,
 				EC5B135F18F68EDE00C300C4 /* ReaderView.m in Sources */,
+				EC9E28B519260891006E3DB7 /* City.m in Sources */,
 				EC5B133218F6861500C300C4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
