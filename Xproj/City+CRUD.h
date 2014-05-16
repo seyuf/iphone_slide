@@ -11,4 +11,7 @@
 @interface City (CRUD)
 
 + (instancetype) newCity;
++(NSArray *) allCities;
+-(void) destroy;
+
 @end
