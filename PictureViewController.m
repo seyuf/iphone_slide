@@ -67,16 +67,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     //self.readerView.delegate = self;
-    _location.latitude = 48.89364 ;
-    _location.longitude = 2.33739;
-    _location.radius = 0;
+    
     UIActivityIndicatorView * indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     indicator.backgroundColor = [UIColor blackColor];
     indicator.center = self.view.center;
     [self.view addSubview:indicator];
     [indicator startAnimating];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        self.pictures = [FlickrPicture picturesAroundLocation:_location];
+        self.pictures = [FlickrPicture picturesAroundLocation:self.location];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.readerView.delegate = self;
             [self.readerView displayPageAtIndex:0 animated:YES];

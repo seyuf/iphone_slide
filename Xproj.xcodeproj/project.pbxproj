@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A7B850C19349A5000716AC8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7B850B19349A5000716AC8 /* MapKit.framework */; };
 		EC09399E19115001006CC7B8 /* FlickrPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = EC09399D19115001006CC7B8 /* FlickrPicture.m */; };
 		EC5B132418F6861500C300C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B132318F6861500C300C4 /* Foundation.framework */; };
 		EC5B132618F6861500C300C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B132518F6861500C300C4 /* CoreGraphics.framework */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A7B850B19349A5000716AC8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EC09399C19115001006CC7B8 /* FlickrPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPicture.h; sourceTree = "<group>"; };
 		EC09399D19115001006CC7B8 /* FlickrPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPicture.m; sourceTree = "<group>"; };
 		EC5B132018F6861500C300C4 /* Xproj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xproj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A7B850C19349A5000716AC8 /* MapKit.framework in Frameworks */,
 				EC5B132618F6861500C300C4 /* CoreGraphics.framework in Frameworks */,
 				EC5B132A18F6861500C300C4 /* CoreData.framework in Frameworks */,
 				EC5B132818F6861500C300C4 /* UIKit.framework in Frameworks */,
@@ -147,6 +150,7 @@
 		EC5B132218F6861500C300C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A7B850B19349A5000716AC8 /* MapKit.framework */,
 				EC5B132318F6861500C300C4 /* Foundation.framework */,
 				EC5B132518F6861500C300C4 /* CoreGraphics.framework */,
 				EC5B132718F6861500C300C4 /* UIKit.framework */,

@@ -33,6 +33,9 @@
 }
 - (IBAction)addLocation:(id)sender {
     City * newCity = [City newCity];
+    newCity.latitude = @(self.mapView.centerCoordinate.latitude);
+    newCity.longitude= @(self.mapView.centerCoordinate.longitude);
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

@@ -8,6 +8,8 @@
 
 #import "CityViewController.h"
 #import "City+CRUD.h"
+#import "PictureViewController.h"
+@import CoreLocation;
 
 @interface CityViewController ()
 @property (strong, nonatomic) NSArray * cities;
@@ -28,9 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [City newCity];
-    [City newCity];
     self.cities = [City allCities];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(localizeCities) forControlEvents:UIControlEventValueChanged];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -38,12 +40,38 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.cities = [City allCities];
+    [self.tableView reloadData];
+}
+ 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void) localizeCities
+{
+    [self.cities enumerateObjectsUsingBlock:^(City * city, NSUInteger idx, BOOL *stop) {
+        CLGeocoder * geocoder = [[CLGeocoder alloc] init];
+        CLLocation * location = [[CLLocation alloc] initWithLatitude:city.latitude.doubleValue longitude:city.longitude.doubleValue];
+        [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+            for (CLPlacemark * placemark in placemarks) {
+                if (placemark.locality.length) {
+                    city.name = placemark.locality;
+                }else if (placemark.country.length){
+                    city.name = placemark.country;
+                }else{
+                    city.name = @"Lieu inconnu";
+                }
+            }
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+    }];
+    [self.refreshControl endRefreshing];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -113,7 +141,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -121,8 +149,20 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    // all same strings in ios have the same pointer
+    if ([segue.identifier isEqualToString:@("toPictureViewController")]) {
+        PictureViewController * viewController = segue.destinationViewController;
+        City * city = self.cities[self.tableView.indexPathForSelectedRow.row];
+        
+        FlickRLocation location;
+        location.latitude = city.latitude.doubleValue;
+        location.longitude = city.longitude.doubleValue;
+        location.radius = 10;
+        
+        viewController.location = location;
+    }
 }
 
- */
+
 
 @end

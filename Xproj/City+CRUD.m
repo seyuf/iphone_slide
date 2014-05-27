@@ -26,6 +26,7 @@
     [[City appDelegate] saveContext];
 }
 
+
 +(NSArray *) allCities{
     NSFetchRequest * request = [[NSFetchRequest alloc]
                                 initWithEntityName:@"City"];
