@@ -33,6 +33,10 @@
     return [[self context] executeFetchRequest:request error:nil];
 }
 
++ (void) saveChanges{
+    [[self appDelegate] saveContext];
+}
+
 +(NSManagedObjectContext *) context
 {
     return [ [self appDelegate] managedObjectContext];

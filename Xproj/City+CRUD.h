@@ -13,5 +13,6 @@
 + (instancetype) newCity;
 +(NSArray *) allCities;
 -(void) destroy;
++ (void) saveChanges;
 
 @end

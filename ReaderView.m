@@ -76,6 +76,10 @@
 
 -(void)layoutSubviews
 {
+    [super layoutSubviews];
+    
+    // when rotage redraw
+    [self.subviews.lastObject setFrame:self.bounds];
     if (!self.gestureRecognizers.count) {
         
         UISwipeGestureRecognizer * previousPageReconizer =

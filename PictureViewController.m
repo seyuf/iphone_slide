@@ -62,6 +62,14 @@
 
 }
 
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    for (UIActivityIndicatorView * spinner in self.view.subviews) {
+        spinner.center = self.view.center;
+    }
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -73,6 +81,7 @@
     indicator.center = self.view.center;
     [self.view addSubview:indicator];
     [indicator startAnimating];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         self.pictures = [FlickrPicture picturesAroundLocation:self.location];
         dispatch_async(dispatch_get_main_queue(), ^{

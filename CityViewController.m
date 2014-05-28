@@ -67,6 +67,7 @@
                     city.name = @"Lieu inconnu";
                 }
             }
+            [City saveChanges];
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
         }];
     }];

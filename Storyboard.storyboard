@@ -85,12 +85,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="teg-cW-WJN">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="teg-cW-WJN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvn-gK-LmR">
-                                <rect key="frame" x="111" y="450" width="99" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvn-gK-LmR">
+                                <rect key="frame" x="20" y="501" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Ajouter un lien">
@@ -101,13 +101,31 @@
                                     <action selector="addLocation:" destination="hLi-cT-1W7" eventType="touchUpInside" id="2HM-po-tWr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-j8-p2c">
+                                <rect key="frame" x="20" y="539" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="vvn-gK-LmR" secondAttribute="centerX" id="kYk-ym-tfO"/>
+                            <constraint firstItem="D34-Ie-vSj" firstAttribute="top" secondItem="MC5-j8-p2c" secondAttribute="bottom" constant="20" symbolic="YES" id="4Is-QN-SP0"/>
+                            <constraint firstAttribute="trailing" secondItem="teg-cW-WJN" secondAttribute="trailing" id="CUk-l5-cOa"/>
+                            <constraint firstItem="vvn-gK-LmR" firstAttribute="leading" secondItem="pBW-3a-Qli" secondAttribute="leading" constant="20" symbolic="YES" id="CXj-bs-g0s"/>
+                            <constraint firstItem="MC5-j8-p2c" firstAttribute="leading" secondItem="pBW-3a-Qli" secondAttribute="leading" constant="20" symbolic="YES" id="Gha-BC-6fB"/>
+                            <constraint firstItem="teg-cW-WJN" firstAttribute="top" secondItem="pBW-3a-Qli" secondAttribute="top" id="MSe-E2-7lK"/>
+                            <constraint firstItem="MC5-j8-p2c" firstAttribute="top" secondItem="vvn-gK-LmR" secondAttribute="bottom" constant="8" symbolic="YES" id="WWO-rN-l0C"/>
+                            <constraint firstAttribute="trailing" secondItem="vvn-gK-LmR" secondAttribute="trailing" constant="20" symbolic="YES" id="Xmn-QW-mZk"/>
+                            <constraint firstItem="D34-Ie-vSj" firstAttribute="top" secondItem="teg-cW-WJN" secondAttribute="bottom" id="otP-2N-VLG"/>
+                            <constraint firstAttribute="trailing" secondItem="MC5-j8-p2c" secondAttribute="trailing" constant="20" symbolic="YES" id="vEc-ly-t4G"/>
+                            <constraint firstItem="teg-cW-WJN" firstAttribute="leading" secondItem="pBW-3a-Qli" secondAttribute="leading" id="wdn-ha-WMX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coordinateLabel" destination="MC5-j8-p2c" id="esJ-Mv-oO5"/>
                         <outlet property="mapView" destination="teg-cW-WJN" id="V36-vU-Pih"/>
                     </connections>
                 </viewController>
